@@ -1,7 +1,8 @@
 import React, {useState} from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Platform } from "react-native";
 import { TextInput, Headline, Button, Paragraph, Dialog, Portal } from "react-native-paper";
 import globalStyles from "../Styles/global";
+import axios from "axios";
 
 const newClient = () => {
 
@@ -14,7 +15,7 @@ const newClient = () => {
     const [alerta, guardarAlerta] = useState(false);
 
     //Almacena el cliente en la base de datos
-        const guardarCliente = () => {
+        const guardarCliente = async () => {
             //validar
             if (nombre === '' || telefono === ''|| correo === '' || empresa === '') {
                 guardarAlerta(true)
@@ -25,6 +26,16 @@ const newClient = () => {
             console.log(cliente)
 
             //guardar el cliente en la API
+            try {
+                if (Platform.OS === 'ios') {
+                    await axios.post('http://localhost:3000/clientes', cliente)
+                } else {
+                    await axios.post('http://10.0.2.2:3000/clientes', cliente)
+                }
+                
+            } catch (error) {
+                console.log(error)
+            }
 
             //redireccionar
 
