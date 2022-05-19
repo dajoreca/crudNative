@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { View, StyleSheet } from "react-native";
-import { TextInput, Headline, Button } from "react-native-paper";
+import { TextInput, Headline, Button, Paragraph, Dialog, Portal } from "react-native-paper";
 import globalStyles from "../Styles/global";
 
 const newClient = () => {
@@ -11,7 +11,27 @@ const newClient = () => {
     const [telefono, guardarTelefono] = useState('');
     const [correo, guardarCorreo] = useState('');
     const [empresa, guardarEmpresa] = useState('');
+    const [alerta, guardarAlerta] = useState(false);
 
+    //Almacena el cliente en la base de datos
+        const guardarCliente = () => {
+            //validar
+            if (nombre === '' || telefono === ''|| correo === '' || empresa === '') {
+                guardarAlerta(true)
+                return;
+            }
+            //generar el cliente
+            const cliente = {nombre, telefono, empresa, correo};
+            console.log(cliente)
+
+            //guardar el cliente en la API
+
+            //redireccionar
+
+            //limpiar el formulario
+
+
+        }
 
     return ( 
         <View style={globalStyles.container}>
@@ -46,6 +66,23 @@ const newClient = () => {
                 value= {empresa}
                 style={styles.input}
             />
+            <Button icon='pencil-circle' mode='contained' onPress={() => guardarCliente()}>
+                Guardar Cliente
+            </Button>
+            <Portal>
+                <Dialog
+                    visible={alerta}
+                    onDismiss={ () => guardarAlerta(false) }
+                >
+                    <Dialog.Title>Error</Dialog.Title>
+                    <Dialog.Content>
+                        <Paragraph>Todos los campos son obligatorios</Paragraph>
+                    </Dialog.Content>
+                    <Dialog.Actions>
+                        <Button onPress={ () => guardarAlerta(false) }>OK</Button>
+                    </Dialog.Actions>
+                </Dialog>
+            </Portal>
             
         </View>
      );
