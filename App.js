@@ -10,7 +10,7 @@ import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import Start from './Views/Start';
 import newClient from './Views/newClient';
 import clientDetails from './Views/clientDetails';
-
+import BarraSuperior from './Components/UI/Barra';
 
 
 const Stack = createStackNavigator()
@@ -23,7 +23,7 @@ const theme = {
   colors: {
     ...DefaultTheme.colors,
     primary: '#1774F2', //Azul, por defecto es morado
-    //accent: '#0655BF'
+    accent: '#0655BF'
   }
 }
 
@@ -36,6 +36,7 @@ const App = () => {
           <Stack.Navigator
             initialRouteName='Start'
             screenOptions={{
+              headerTitleAlign: 'center',
               headerStyle:{
                 backgroundColor: theme.colors.primary
               },
@@ -49,6 +50,13 @@ const App = () => {
               <Stack.Screen
                 name='Start'
                 component={Start}
+                options={ ({navigation, route}) => ({
+                  headerLeft: (props) =>   <BarraSuperior {...props} 
+                                          navigation={navigation}
+                                          route={route}
+                                      />
+                                        
+                })}
               />
               <Stack.Screen
                 name='newClient'
