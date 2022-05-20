@@ -26,16 +26,21 @@ const newClient = () => {
             console.log(cliente)
 
             //guardar el cliente en la API
-            try {
-                if (Platform.OS === 'ios') {
-                    await axios.post('http://localhost:3000/clientes', cliente)
-                } else {
-                    await axios.post('http://10.0.2.2:3000/clientes', cliente)
-                }
-                
-            } catch (error) {
-                console.log(error)
-            }
+
+            axios.post('http://localhost:3000/clientes', cliente)
+
+                //para una app y necesites ios y android se hara lo siguiente
+
+                    //try {
+                    // if (Platform.OS === 'ios') {
+                        //    await axios.post('http://localhost:3000/clientes', cliente)
+                        //} else {
+                        //    await axios.post('http://10.0.2.2:3000/clientes', cliente)
+                        //}
+                        
+                    //} catch (error) {
+                    //   console.log(error)
+                    //}
 
             //redireccionar
 
