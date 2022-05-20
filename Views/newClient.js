@@ -4,7 +4,7 @@ import { TextInput, Headline, Button, Paragraph, Dialog, Portal } from "react-na
 import globalStyles from "../Styles/global";
 import axios from "axios";
 
-const newClient = () => {
+const newClient = ({navigation}) => {
 
     //Campos Formulario
 
@@ -27,8 +27,11 @@ const newClient = () => {
 
             //guardar el cliente en la API
 
-            axios.post('http://localhost:3000/clientes', cliente)
-
+            try {
+                await axios.post('http://localhost:3000/clientes', cliente)
+            } catch (error) {
+                console.log(error);
+            }
                 //para una app y necesites ios y android se hara lo siguiente
 
                     //try {
@@ -44,8 +47,14 @@ const newClient = () => {
 
             //redireccionar
 
+            navigation.navigate('Start');
+
             //limpiar el formulario
 
+            guardarNombre('')
+            guardarTelefono('')
+            guardarCorreo('')
+            guardarEmpresa('')
 
         }
 
