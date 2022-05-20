@@ -4,8 +4,9 @@ import { TextInput, Headline, Button, Paragraph, Dialog, Portal } from "react-na
 import globalStyles from "../Styles/global";
 import axios from "axios";
 
-const newClient = ({navigation}) => {
+const newClient = ({navigation, route}) => {
 
+    const { guardarConsultarAPI } = route.params;
     //Campos Formulario
 
     const [nombre, guardarNombre] = useState('');
@@ -56,6 +57,8 @@ const newClient = ({navigation}) => {
             guardarCorreo('')
             guardarEmpresa('')
 
+            //Cambiar a true para traernos el nuevo cliente (actualizar pag principal)
+            guardarConsultarAPI(true);
         }
 
     return ( 

@@ -1,67 +1,25 @@
 {
   "clientes": [
     {
-      "nombre": "dani",
-      "telefono": "5324545",
-      "empresa": "dani SL",
-      "correo": "correo@gmail.com",
+      "nombre": "Daniel",
+      "telefono": "666666666",
+      "empresa": "dani sl.",
+      "correo": "dani@dani.com",
       "id": 1
     },
     {
-      "nombre": "dd",
-      "telefono": "dddd",
-      "empresa": "ddd",
-      "correo": "dddd",
+      "nombre": "dada",
+      "telefono": "dada",
+      "empresa": "dada",
+      "correo": "dada",
       "id": 2
     },
     {
-      "nombre": "wwew",
-      "telefono": "ewe",
-      "empresa": "wewe",
-      "correo": "wewe",
+      "nombre": "aaa",
+      "telefono": "aaa",
+      "empresa": "aa",
+      "correo": "aaa",
       "id": 3
-    },
-    {
-      "nombre": "aaaaa",
-      "telefono": "aaaa",
-      "empresa": "aaa",
-      "correo": "aaaa",
-      "id": 4
-    },
-    {
-      "nombre": "111",
-      "telefono": "11111",
-      "empresa": "1111",
-      "correo": "1111",
-      "id": 5
-    },
-    {
-      "nombre": "dadadad",
-      "telefono": "adadada",
-      "empresa": "dad",
-      "correo": "dddada",
-      "id": 6
-    },
-    {
-      "nombre": "sdaa",
-      "telefono": "sdasd",
-      "empresa": "dasdad",
-      "correo": "asdasda",
-      "id": 7
-    },
-    {
-      "nombre": "addada",
-      "telefono": "dadadad",
-      "empresa": "ddada",
-      "correo": "adadada",
-      "id": 8
-    },
-    {
-      "nombre": "dadad",
-      "telefono": "adadad",
-      "empresa": "da",
-      "correo": "adada",
-      "id": 9
     }
   ]
 }

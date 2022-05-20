@@ -52,10 +52,10 @@ const App = () => {
                   name='Start'
                   component={Start}
                   options={ ({navigation, route}) => ({
-                    headerLeft: (props) =>   <BarraSuperior {...props} 
-                                            navigation={navigation}
-                                            route={route}
-                                        />
+                  //  headerLeft: (props) =>   <BarraSuperior {...props} 
+                  //                          navigation={navigation}
+                  //                          route={route}
+                  //                      />
                                           
                   })}
                 />
